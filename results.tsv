@@ -1,0 +1,2 @@
+experiment	val_bpb	peak_vram_mb	kept	notes
+0	0.686159	901.2	True	baseline T4 run
