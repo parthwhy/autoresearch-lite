@@ -83,7 +83,7 @@ git clone https://github.com/parthwhy/autoresearch-lite.git
 cd autoresearch-lite
 uv sync
 pip install datasets
-python setup_data.py        # downloads TinyStories, trains tokenizer
+uv run prepare.py --num-shards 0      # downloads TinyStories, trains tokenizer
 uv run train.py             # single baseline run
 # then run the agent loop from colab_kaggle.ipynb
 ```
