@@ -6,6 +6,19 @@
 
 ---
 
+## Fork scope
+
+| | |
+|---|---|
+| **Upstream** | [karpathy/autoresearch](https://github.com/karpathy/autoresearch) |
+| **Primary objective** | Run on free cloud GPUs (Google Colab, Kaggle T4) — zero cost, zero local setup |
+| **Scope of changes** | Flash Attention 3 → PyTorch SDPA, dataset swap, scaled hyperparameters, automated agent loop notebook |
+| **Non-goals** | Windows, MacOS, multi-GPU, AMD/ROCm, local setup optimization |
+
+If you need the original H100 path, use [karpathy/autoresearch](https://github.com/karpathy/autoresearch).
+
+---
+
 ## What this is
 
 Karpathy's [autoresearch](https://github.com/karpathy/autoresearch) lets an AI agent run ML experiments autonomously overnight — it edits `train.py`, trains for 5 minutes, checks if `val_bpb` improved, keeps or discards, and repeats. The original requires an H100 and uses H100-only CUDA kernels.
@@ -83,7 +96,7 @@ git clone https://github.com/parthwhy/autoresearch-lite.git
 cd autoresearch-lite
 uv sync
 pip install datasets
-uv run prepare.py --num-shards 0      # downloads TinyStories, trains tokenizer
+uv run prepare.py --num-shards 0   # downloads TinyStories, trains tokenizer
 uv run train.py             # single baseline run
 # then run the agent loop from colab_kaggle.ipynb
 ```
