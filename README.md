@@ -176,6 +176,7 @@ See also:
 - [jsegov/autoresearch-win-rtx](https://github.com/jsegov/autoresearch-win-rtx) — Windows RTX port
 
 ---
+* Submitted for listing in [karpathy/autoresearch notable forks](https://github.com/karpathy/autoresearch)
 
 ## About the author
 
