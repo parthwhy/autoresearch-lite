@@ -1,5 +1,24 @@
-experiment	val_bpb	peak_vram_mb	kept	notes
-0	0.686159	901.2	True	baseline T4 run
-discarded	0.693976	0.48	discard	Reduce device batch size to increase gradient noise and potentially improve generalization.
-discarded	0.694179	0.48	discard	Reduce DEVICE_BATCH_SIZE to increase gradient noise and potentially improve generalization.
-discarded	0.699463	0.88	discard	Increase matrix learning rate to potentially improve parameter updates.
+experiment	val_bpb	memory_gb	status	description
+baseline	0.686159	0.9	keep	baseline T4 run
+exp_01	0.707247	0.9	discard	TOTAL_BATCH_SIZE 2**16
+exp_02	0.694466	1.1	discard	DEPTH=6
+exp_03	0.694122	0.9	discard	WARMDOWN_RATIO=0.3
+exp_04	0.694582	0.9	discard	WARMUP_RATIO=0.1
+exp_05	0.686685	0.9	discard	MATRIX_LR=0.02
+exp_06	0.693676	0.9	discard	EMBEDDING_LR=0.4
+exp_07	0.688853	0.9	discard	WEIGHT_DECAY=0.1
+exp_08	0.697313	0.9	discard	TOTAL_BATCH_SIZE 2**15
+exp_09	0.696076	0.9	discard	ADAM_BETAS=(0.9,0.95)
+exp_10	0.691765	0.9	discard	FINAL_LR_FRAC=0.1
+exp_11	0.694391	0.9	discard	WARMDOWN_RATIO=0.4
+exp_12	0.70283	1.68	discard	DEPTH=6 (repeat)
+exp_13	0.725293	0.85	discard	HEAD_DIM=256
+exp_14	0.703778	1.68	discard	DEPTH=6 (repeat)
+exp_15	0.697057	0.88	discard	WEIGHT_DECAY=0.1 (repeat)
+exp_16	0.698074	0.88	discard	MATRIX_LR=0.02 (repeat)
+exp_17	0.703237	0.88	discard	SCALAR_LR=0.7
+exp_18	0.0	0.0	crash	TOTAL_BATCH_SIZE 2**12 (assert error)
+exp_19	0.704135	0.88	discard	WARMUP_RATIO=0.1 (repeat)
+exp_20	0.693976	0.48	discard	DEVICE_BATCH_SIZE=16
+exp_21	0.694179	0.48	discard	DEVICE_BATCH_SIZE=16 (repeat)
+exp_22	0.699463	0.88	discard	MATRIX_LR=0.06
